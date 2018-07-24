@@ -1,0 +1,15 @@
+<h1>See your task</h1>
+
+
+<h2>Your task: <%= @task.title%> - Details: <%=@task.details %>  </h2>
+
+<p><input type='checkbox' <%= @task.complete ? 'checked' : "" %>> Mark as done </p>
+
+
+
+
+<div></div>
+
+<button type='button' class='btn btn-primary' style='color:white;'> <%= link_to "Back to tasks", tasks_path %> </button>
+<button type='button' class='btn btn-primary'><%= link_to "Edit Task", edit_task_path(@task) %> </button>
+<button type='button' class='btn btn-primary'><%= link_to "Delete Task", task_path(@task), method: :delete, data: {confirm: "Right about it?"} %> </button>
